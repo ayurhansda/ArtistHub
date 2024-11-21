@@ -1,0 +1,18 @@
+// src/pages/About.js
+import React, { useEffect } from 'react';
+
+function Services() {
+	useEffect(() => {
+		document.title = 'Services - Artist Hub';
+	}, []);
+
+
+	return (
+    	<div>
+      		<h1>Services Page</h1>
+      		<p>Welcome to services page.</p>
+    	</div>
+  	);
+}
+
+export default Services;

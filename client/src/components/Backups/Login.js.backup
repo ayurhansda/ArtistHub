@@ -1,0 +1,54 @@
+//export default loginimport React, { useState } from 'react';
+import { React, useState } from 'react';
+import '../styles/LoginPage.css'; // Import CSS file for styling
+
+const LoginPage = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    // Here you would typically make a request to your backend to authenticate the user
+    // For simplicity, I'll just check if username and password match a hardcoded value
+    if (username === 'admin' && password === 'password') {
+      setLoggedIn(true);
+    } else {
+      alert('Invalid username or password');
+    }
+  };
+
+  return (
+   <div class="login-container">
+  <div id="loginForm" style={{ display: loggedIn ? 'none' : 'block' }}>
+    <form class="login-form" onsubmit="handleLogin(event)">
+      <h2>Login</h2>
+      <div class="inputBox">
+        <input
+          type="text"
+          placeholder="Username"
+          /*value="Username"*/
+          oninput="username = this.value"
+        />
+        <span>Username</span>
+        <i></i>
+      </div>
+      <div class="inputBox">
+        <input
+          type="password"
+          placeholder="Password"
+          /*value="Password"*/
+          oninput="password = this.value"
+        />
+        <span>Password</span>
+        <i></i>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+ );
+};
+
+export default LoginPage;
+
+
